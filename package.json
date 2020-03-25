@@ -1,5 +1,5 @@
 {
-  "name": "@slytrunk/babel-plugin-app-env",
+  "name": "@slytrunk/app-env",
   "version": "0.1.0",
   "main": "index.js",
   "author": "SlyTrunk",
