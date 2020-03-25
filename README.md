@@ -12,8 +12,8 @@ Import .env files per APP_ENV
       {
         "moduleName": "@slytrunk/app-env",
         "envs": {
-          "default": "../k8s/staging.env",
-          "production": "../k8s/production.env"
+          "default": ".env",
+          "production": ".env.production"
         }
       }
     ]
