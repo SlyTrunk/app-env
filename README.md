@@ -8,9 +8,9 @@ Import .env files per APP_ENV
 {
   "plugins": [
     [
-      "@slytrunk/babel-plugin-app-env",
+      "module:@slytrunk/app-env",
       {
-        "moduleName": "env",
+        "moduleName": "@slytrunk/app-env",
         "envs": {
           "default": "../k8s/staging.env",
           "production": "../k8s/production.env"
