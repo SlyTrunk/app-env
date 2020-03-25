@@ -1,6 +1,6 @@
 {
   "name": "@slytrunk/app-env",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "main": "index.js",
   "author": "SlyTrunk",
   "publishConfig": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:SlyTrunk/babel-plugin-app-env.git"
+    "url": "git@github.com:SlyTrunk/app-env.git"
   },
   "peerDependencies": {
     "dotenv": "*"
