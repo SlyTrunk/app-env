@@ -48,7 +48,6 @@ module.exports = function ({ types: t }) {
         if (options.moduleName === undefined) return;
 
         if (path.node.source.value === options.moduleName) {
-          console.log(path.node.source.value);
           path.insertBefore(
             t.importDeclaration(
               [
