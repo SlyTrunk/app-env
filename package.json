@@ -2,6 +2,7 @@
   "name": "@slytrunk/app-env",
   "version": "1.0.0",
   "main": "index.js",
+  "types": "index.d.ts",
   "author": "SlyTrunk",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -9,6 +10,9 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:SlyTrunk/app-env.git"
+  },
+  "devDependencies": {
+    "dotenv": "8.2.0"
   },
   "peerDependencies": {
     "dotenv": "*"
