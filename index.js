@@ -14,6 +14,12 @@ const loadConfig = (path) => {
 const DEBUG = process.env.APP_ENV !== "production";
 
 module.exports = function ({ types: t }) {
+  const isLeftSideOfAssignmentExpression = (path) => {
+    return (
+      t.isAssignmentExpression(path.parent) && path.parent.left === path.node
+    );
+  };
+
   return {
     pre() {
       if (envConfig) return;
@@ -97,6 +103,18 @@ module.exports = function ({ types: t }) {
           });
 
           path.remove();
+        }
+      },
+      MemberExpression(path) {
+        if (path.get("object").matchesPattern("process.env")) {
+          const key = path.toComputedKey();
+          if (
+            t.isStringLiteral(key) &&
+            !isLeftSideOfAssignmentExpression(path) &&
+            key.value === "APP_ENV"
+          ) {
+            path.replaceWith(t.valueToNode(process.env[key.value]));
+          }
         }
       },
     },
