@@ -1,4 +1,4 @@
-let appEnv = "production";
+let appEnv = process.env.APP_ENV || "production";
 let appConfig = require("./environments.json");
 
 if (!appConfig) {
