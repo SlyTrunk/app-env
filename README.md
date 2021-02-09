@@ -4,17 +4,17 @@ Import .env files per APP_ENV
 
 ## Usage
 
-```json
-{
-  "plugins": [
+```js
+module.exports = {
+  plugins: [
     [
       "module:@slytrunk/app-env",
       {
-        "moduleName": "@slytrunk/app-env",
-        "cacheIdentifier": process.env.APP_ENV,
-        "envs": {
-          "stage": ".env.stage",
-          "production": ".env.production"
+        moduleName: "@slytrunk/app-env",
+        cacheIdentifier: process.env.APP_ENV,
+        envs: {
+          stage: ".env.stage",
+          production: ".env.production"
         }
       }
     ]
@@ -42,6 +42,8 @@ If your `APP_ENV` is not production, we support hot-loading different environmen
 import { setEnvironment } from "@slytrunk/app-env/debug";
 setEnvironment("stage");
 ```
+
+> _NOTE: It's a good idea to set `cacheIdentifier` as babel will cache the results of this module for subsequent builds and may get stuck in debug mode._
 
 You can get a list of available environments so you can build ui to switch environments:
 
