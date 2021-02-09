@@ -16,7 +16,7 @@ function setEnvironment(environment) {
 }
 
 function getEnvironmentOptions() {
-  return Object.keys(appConfig);
+  return Object.keys(appConfig || {});
 }
 
 function getEnv(key) {
