@@ -1,10 +1,10 @@
 let appEnv = process.env.APP_ENV || "production";
 let appConfig;
 
-try {
-  appConfig = require("./environments.json");
-} catch (err) {
-  if (process.env.APP_ENV !== "production") {
+if (process.env.APP_ENV !== "production") {
+  try {
+    appConfig = require("./environments.json");
+  } catch (err) {
     throw new Error(
       `@slytrunk/app-env: No environments.json found. Did you include the babel plugin?`
     );
