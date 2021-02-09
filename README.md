@@ -11,6 +11,7 @@ Import .env files per APP_ENV
       "module:@slytrunk/app-env",
       {
         "moduleName": "@slytrunk/app-env",
+        "cacheIdentifier": process.env.APP_ENV,
         "envs": {
           "stage": ".env.stage",
           "production": ".env.production"
