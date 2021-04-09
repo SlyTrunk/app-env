@@ -1,6 +1,6 @@
 {
   "name": "@slytrunk/app-env",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "main": "index.js",
   "types": "index.d.ts",
   "author": "SlyTrunk",
