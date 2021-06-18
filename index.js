@@ -1,4 +1,5 @@
 const { writeFileSync } = require("fs");
+const { resolve } = require("path");
 const process = require("process");
 const dotEnv = require("dotenv");
 
@@ -34,7 +35,7 @@ module.exports = function ({ types: t }) {
         });
 
         writeFileSync(
-          `${__dirname}/environments.json`,
+          `${resolve(this.opts.projectRoot || process.cwd())}/.env.json`,
           JSON.stringify(environments)
         );
         envConfig = true;
