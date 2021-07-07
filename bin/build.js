@@ -12,16 +12,9 @@ function loadConfig(path) {
   return env ? env.parsed : {};
 }
 
-const projectRoot = process.cwd();
-const configExists = fs.existsSync(resolve(projectRoot, "env.config.js"));
-
-const config = {
-  dir: "config",
-  ...(configExists ? require(resolve(projectRoot, "env.config")) : {}),
-};
-
 const environments = {};
-const envDir = resolve(projectRoot, config.dir);
+const projectRoot = process.cwd();
+const envDir = resolve(projectRoot, process.argv[2] || "config");
 
 if (!fs.existsSync(envDir)) {
   throw new Error(`@slytrunk/app-env: missing env dir "${envDir}"`);
