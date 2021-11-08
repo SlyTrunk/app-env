@@ -11,6 +11,10 @@ if (process.env.APP_ENV !== "production") {
   }
 }
 
+function getEnvironment() {
+  return appEnv;
+}
+
 function setEnvironment(environment) {
   appEnv = environment;
 }
